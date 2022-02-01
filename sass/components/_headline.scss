@@ -1,0 +1,28 @@
+.headline {
+  display: grid;
+  justify-content: center;
+  grid-auto-rows: max-content;
+  height: 90vh;
+  @include response(phone) {
+    align-content: center;
+  }
+  &__text {
+    margin-top: 10rem;
+    font-family: "Fraunces", serif;
+    font-size: 6.4rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    @include response(tab-port) {
+      text-align: center;
+    }
+  }
+  .arrow-down {
+    margin-top: 10rem;
+
+    &__icon {
+      display: block;
+      margin: 0 auto;
+      animation: arrow-anim 3s infinite ease backwards;
+    }
+  }
+}

@@ -1,0 +1,55 @@
+.footer {
+  padding: 10rem 0;
+  background-color: hsl(168, 34%, 65%);
+  text-align: center;
+  color: hsl(167, 40%, 24%);
+  & > * {
+    &:not(:last-child) {
+      margin-bottom: 4rem;
+    }
+  }
+  &__logo {
+    font-size: 3.2rem;
+    font-family: "Barlow", sans-serif;
+  }
+  &__page-links {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
+    column-gap: 5rem;
+  }
+  &__page-item {
+    list-style: none;
+  }
+  &__page-link:link,
+  &__page-link:visited {
+    font-family: "Barlow", sans-serif;
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.6rem;
+    transition: color 0.5s ease;
+  }
+  &__page-link:hover {
+    color: hsl(0, 0%, 100%);
+  }
+  &__social-links {
+    & > * {
+      &:not(:last-child) {
+        margin-right: 2rem;
+      }
+    }
+  }
+  &__social-link:link,
+  &__social-link:visited {
+    text-decoration: none;
+  }
+
+  &__social-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: fill 0.5s ease;
+  }
+  &__social-link:hover > &__social-icon {
+    fill: hsl(0, 0%, 100%);
+  }
+}

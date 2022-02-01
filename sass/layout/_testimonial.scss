@@ -1,0 +1,113 @@
+.testimonial {
+  height: min(85vh, 70rem);
+
+  display: grid;
+  grid-template-rows: 25% 75%;
+  grid-template-columns: repeat(3, 1fr);
+  @include response(tab-land) {
+    grid-template-rows: 15% 85%;
+    height: min(70vh, 60rem);
+  }
+  @include response(tab-port) {
+    margin: 5rem 0;
+    height: auto;
+    row-gap: min(5vw, 3rem);
+    grid-template-rows: max-content;
+    grid-template-columns: 1fr;
+    align-content: center;
+    justify-content: center;
+  }
+
+  &__heading {
+    grid-column: 1/-1;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+  }
+  &__items {
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    & > * {
+      &:not(:last-child) {
+        margin-bottom: 2.5rem;
+      }
+    }
+  }
+  &__heading {
+    align-self: end;
+    justify-self: center;
+    font-family: "Fraunces", serif;
+    text-transform: uppercase;
+    font-size: 2.4rem;
+    letter-spacing: 0.5rem;
+    color: hsl(210, 4%, 67%);
+    @include response(tab-port) {
+      align-self: center;
+    }
+  }
+  &__para {
+    font-family: "Barlow", sans-serif;
+    font-size: 1.6rem;
+    text-align: center;
+    width: 80%;
+    line-height: 1.6;
+    font-weight: 500;
+    color: hsl(213, 9%, 39%);
+  }
+  &__user-img {
+    border-radius: 50%;
+    display: block;
+    transition: filter 1s ease;
+  }
+
+  &__user-name {
+    display: none;
+    font-family: "Fraunces", serif;
+    font-weight: bold;
+    color: #000;
+    font-size: 1.8rem;
+    @include response(tab-land) {
+      display: inline-block;
+    }
+  }
+  &__user-pos {
+    font-family: "Barlow", sans-serif;
+    font-weight: 400;
+    color: hsl(210, 4%, 67%);
+    font-size: 1.4rem;
+  }
+  &__user-info {
+    position: relative;
+  }
+  &__user-name-anim {
+    color: #fff;
+    font-size: 2rem;
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease;
+    backface-visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    @include response(tab-land) {
+      display: none;
+    }
+  }
+  &__user-img:hover + &__user-name-anim {
+    top: 50%;
+    opacity: 1;
+    visibility: visible;
+  }
+  &__user-img:hover {
+    filter: brightness(0.5);
+    @include response(tab-land) {
+      filter: none;
+    }
+  }
+}
